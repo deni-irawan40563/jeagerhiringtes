@@ -16,9 +16,9 @@ passport.deserializeUser((id, done) => {
 
 passport.use(
     new GoogleStrategy({
-        clientID: keys.clientID,
-        clientSecret: keys.clientSecret,
-        callbackURL: keys.callbackURL
+        clientID: keys.google.clientID,
+        clientSecret: keys.google.clientSecret,
+        callbackURL: keys.google.callbackURL
 
     }, (accessToken, refreshToken, profile, done) => {
         User.findOne({googleId: profile.id}).then((currentUser) => {
@@ -29,8 +29,8 @@ passport.use(
                     email: profile._json.email
                 }).save().then((newUser) => {
                     const email = profile._json.email
-                    sendEmail.sendMail(email);
                     console.log('created new user: ', newUser);
+                    sendEmail.sendMail(email);
                     done(null, newUser);
                 });
         });

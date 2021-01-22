@@ -55,21 +55,22 @@ root/uploads
 // add this file to .gitignore
 module.exports = {
         google: {
-            clientID:  '908095846894-apqah7uov1athm7gukbsf6qcn62hk5r5.apps.googleusercontent.com',
-            clientSecret: 'ijP_hqt3cOGeJmO8QFT2c-HT',
-            clientRefreshToken: '1//04rtWPqgQwHv6CgYIARAAGAQSNwF-L9IrVXjQbP2Yx6Mck9qdyucJz2Q2aVnQcDcchPeCIfTnqTtV_TFef3YMF4ndE4TD-IvGGn0',
+            clientID:  'your client id',
+            clientSecret: 'your client secret',
+            clientRefreshToken: 'your google refresh token',
             callbackURL: '/auth/google/redirect'
-
+//you can have client id, secret token and refresh token at https://console.developers.google.com
         },
         mongodb: {
             dbURI: 'mongodb+srv://Odoz54321:Odoz54321@jaeger.tlukl.mongodb.net/jeager?retryWrites=true&w=majority'
         },
         session: {
-            cookieKey: "akuadalahanakgembalayangselaluriang"
+            cookieKey: "your cookie key you can input any random string with no spacing"
         }
 }
 
 ```
+for run this application
 ```
 npm run dev
 ```

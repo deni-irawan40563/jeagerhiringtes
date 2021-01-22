@@ -7,9 +7,10 @@
             body{
                 font-family: arial;
                 margin: 0;
+                text-align: center;
             }
             nav{
-                background: #ff5353;
+                background: skyblue;
                 padding: 20px 10px;
             }
             nav ul{
@@ -45,6 +46,26 @@
             main p{
                 display: inline-block;
             }
+            .container{
+                display: grid;
+                grid-template-areas: "profile desc";
+                grid-template-columns: 1fr 2.3fr;
+            }
+            .profile {
+                grid-area: profile ;
+                min-height: 200px;
+                min-width: 200px;
+            }
+            ul {
+                grid-area: desc;
+                justify-content: start;
+                align-items: center;
+            }
+            ul li {
+                list-style: none;
+                font-size: 23px;
+                margin-top: 10px;
+            }
         </style>
     </head>
     <body>
@@ -60,10 +81,18 @@
             </ul>
         </nav>
         <header>
-            <h1>Welcome, <%= user.username %></h1>
+            <h1>This Is Profile Page</h1>
         </header>
         <main>
-            <img src="<%= user.thumbnail %>" />
+            <div class="container">
+                <img src="<%= user.thumbnail %>" class="profile"/>
+                <ul>
+                    <li>Name :    <%= user.username %></li>
+                    <li>Email :    <%= user.email %></li>
+                    <li>UserId :   <%= user.id %></li>
+                    <li>googleId :    <%= user.googleId %></li>
+                </ul>
+            </div>
         </main>
     </body>
 </html>
