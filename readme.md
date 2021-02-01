@@ -40,13 +40,12 @@ npm install -g nodemon
 Create .env file in your root project folder.
 
 ```
-YOUREMAIL = denykun666@gmail.com
-YOUREMAILPASS = OdozX014D@gmail.com
-YOURNAME = Deni Irawan Nugraha
+YOUREMAIL = your email address
+YOUREMAILPASS = your email password
+YOURNAME = your name
 PORT = 3000
 ```
 ### create folder uploads in your root project folder.
-### Run project for development
 ```
 root/uploads
 ```
@@ -70,7 +69,7 @@ module.exports = {
 }
 
 ```
-for run this application
+### Run project for development
 ```
 npm run dev
 ```

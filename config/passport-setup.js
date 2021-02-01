@@ -22,6 +22,9 @@ passport.use(
 
     }, (accessToken, refreshToken, profile, done) => {
         User.findOne({googleId: profile.id}).then((currentUser) => {
+            if(currentUser){
+                console.log(`user : ${currentUser} is Log in`)
+            }else{
                 new User({
                     googleId: profile.id,
                     username: profile.displayName,
@@ -33,6 +36,7 @@ passport.use(
                     sendEmail.sendMail(email);
                     done(null, newUser);
                 });
+            }
         });
     })
 );
